@@ -1,0 +1,17 @@
+---
+- hosts: test
+  become: true
+  gather_facts: yes
+
+  tasks:
+
+  - name: installing docker
+    yum:
+     name: docker
+     state: installed
+  - name: enableing docker
+    service:
+     name: docker
+     state: started
+
+ 
